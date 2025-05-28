@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNU Bio-Day</title>
+    <meta name="description" content="제5회 SNU Bio-Day / 2025.09.25 개최">
+    <meta name="robots" content="ALL">
+    <meta name="keywords" content="SNU Bio,Day">
+    <meta name="author" content="SNU Bio-Day">
+    <link rel="icon" href="https://snubioday.snu.ac.kr/favicon.ico?ver=2021-03-30" type="image/x-icon">
+    <link rel="shortcut icon" href="https://snubioday.snu.ac.kr/favicon.ico?ver=2021-03-30" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" href="https://snubioday.snu.ac.kr/mobileicon.png?ver=2021-03-30">
+    <!-- CANONICAL LINK -->
+    <link rel="canonical" href="http://snubioday.snu.ac.kr">
+    <!-- BEGIN OPENGRAPH -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" id="ogurl" content="https://snubioday.snu.ac.kr/">
+    <meta property="og:site_name" content="SNU Bio-Day">
+    <meta property="og:title" id="ogtitle" content="SNU Bio-Day">
+    <meta property="og:description" content="제5회 SNU Bio-Day / 2025.09.25 개최">
+    <meta property="og:image" content="./thumbnail.png">
+    <meta property="og:image:width" content="600">
+    <meta property="og:image:height" content="400">
+    <!-- END OPENGRAPH -->
+    <!-- BEGIN TWITTERCARD -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="SNU Bio-Day">
+    <meta name="twitter:description" content="제5회 SNU Bio-Day / 2025.09.25 개최">
+    <meta name="twitter:image" content="./thumbnail.png">
+    <!-- END TWITTERCARD -->
+    <style>
+        /* 100 ‧ Thin */
+        @font-face {
+            font-family: "YoonGothicPro";
+            src: url("./font/YoonGothic700/YoonGothicPro710.ttf") format("truetype");
+            font-weight: 100;
+            font-style: normal;
+        }
+
+        /* 200 ‧ ExtraLight */
+        @font-face {
+            font-family: "YoonGothicPro";
+            src: url("./font/YoonGothic700/YoonGothicPro720.ttf") format("truetype");
+            font-weight: 200;
+            font-style: normal;
+        }
+
+        /* 300 ‧ Light */
+        @font-face {
+            font-family: "YoonGothicPro";
+            src: url("./font/YoonGothic700/YoonGothicPro730.ttf") format("truetype");
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        /* 400 ‧ Regular */
+        @font-face {
+            font-family: "YoonGothicPro";
+            src: url("./font/YoonGothic700/YoonGothicPro740.ttf") format("truetype");
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        /* 500 ‧ Medium */
+        @font-face {
+            font-family: "YoonGothicPro";
+            src: url("./font/YoonGothic700/YoonGothicPro750.ttf") format("truetype");
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        /* 600 ‧ SemiBold */
+        @font-face {
+            font-family: "YoonGothicPro";
+            src: url("./font/YoonGothic700/YoonGothicPro760.ttf") format("truetype");
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        /* 700 ‧ Bold */
+        @font-face {
+            font-family: "YoonGothicPro";
+            src: url("./font/YoonGothic700/YoonGothicPro770.ttf") format("truetype");
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        /* 800 ‧ ExtraBold */
+        @font-face {
+            font-family: "YoonGothicPro";
+            src: url("./font/YoonGothic700/YoonGothicPro780.ttf") format("truetype");
+            font-weight: 800;
+            font-style: normal;
+        }
+
+        /* 900 ‧ Black */
+        @font-face {
+            font-family: "YoonGothicPro";
+            src: url("./font/YoonGothic700/YoonGothicPro790.ttf") format("truetype");
+            font-weight: 900;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "YoonGothicPro", 'Noto Sans KR', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            letter-spacing: -0.03em;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.6;
+            overflow-x: hidden;
+
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 280px;
+            background-color: #fff;
+            padding: 20px;
+            border-right: 1px solid #AEAEB2;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            z-index: 100;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 32px;
+        }
+
+        .logo img {
+            width: 180px;
+            height: auto;
+        }
+
+        .nav-menu {
+            list-style: none;
+            margin-bottom: 32px;
+            padding-left: 12px;
+            border-left: 3px solid #BFC0C1;
+
+        }
+
+        .nav-menu li {
+            font-family: "YoonGothicPro", "Pretendard", sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 7px 0px;
+            color: #8E8E93;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+        }
+
+        .nav-menu li:hover {
+            color: #000000;
+        }
+
+        .nav-menu li.active {
+            color: #db3d88;
+            font-weight: 700;
+            text-decoration: underline;
+        }
+
+        /* 좌측 분홍색 바 */
+        .nav-menu li.active::before {
+            content: '';
+            position: absolute;
+            left: -15px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background-color: #db3d88;
+        }
+
+        .register-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #0f2351;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            font-size: 25px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+
+        .register-btn:hover {
+            background-color: #141a32;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 280px;
+            flex: 1;
+            width: calc(100% - 240px);
+        }
+
+        .title-bar {
+            height: 117px;
+            background-color: #141a32;
+            color: #fff;
+            padding: 0 auto;
+            display: flex;
+            align-items: center;
+            padding-left: 40px;
+            font-size: 32px;
+            font-weight: 800;
+        }
+
+        .content {
+
+            display: flex;
+            flex-direction: row;
+            gap: 81px;
+            margin-left: 42px;
+            margin-top: 75px;
+            margin-right: 41px;
+        }
+
+        .summation {
+            background-color: #F8F9FA;
+            width: 100%;
+            height: 110px;
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            font-weight: 600;
+            padding-left: 18px;
+
+
+        }
+
+        .text {
+            margin-left: 42px;
+            /* margin-top: 44px; */
+            margin-right: 41px;
+            margin-top: 71px;
+        }
+
+        .text h3 {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .text .detail {
+            font-size: 17px;
+            font-weight: 300;
+            line-height: 26px;
+            margin-top: 37px;
+        }
+
+        .text table {
+            width: 100%;
+            table-layout: fixed;
+            border-collapse: collapse;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 100px;
+            margin-top: 33px;
+            text-align: start;
+        }
+
+        .text table th {
+            padding-top: 14px;
+            padding-bottom: 14px;
+            background-color: #f2f2f2;
+            border-collapse: collapse;
+            border-top: 1px solid #ccc;
+            text-align: start;
+            color: #14A2B8;
+
+        }
+
+        .text table td {
+            border-collapse: collapse;
+            border-top: 1px solid #ccc;
+            padding-top: 33px;
+            padding-bottom: 20px
+        }
+
+
+        .profile {
+            margin-left: 20px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 20px;
+
+        }
+
+        .profile h3 {
+            font-size: 19px;
+            margin-bottom: 8px;
+            font-weight: 800;
+        }
+
+        .profile h4 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .profile .profile-img {
+            width: 140px;
+        }
+
+        .profile .profile-img2{
+            height: 80px;
+            margin-top: 22px;
+        }
+
+        @media (max-width: 1024px) {
+            .partners-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                position: relative;
+                height: auto;
+                padding: 15px;
+            }
+
+            .nav-menu li.active::before {
+                left: -15px;
+            }
+
+            .main-content {
+                margin-left: 0;
+                width: 100%;
+            }
+        }
+    </style>
+    <script src="./env.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <a class="logo" href="/main.html">
+                <img src="./img/UI/logo.png" alt="Seoul National University Bio-MAX Institute">
+            </a>
+
+            <nav>
+                <ul class="nav-menu">
+                    <a href="/greetings.html">
+                        <li>인사말</li>
+                    </a>
+                    <a href="/program.html">
+                        <li>프로그램</li>
+                    </a>
+                    <a href="/session1.html">
+                        <li>바이오 커넥트 프로그램</li>
+                    </a>
+                    <a href="/session2.html">
+                        <li>도넛데이 세션/BIO OX 퀴즈</li>
+                    </a>
+                    <a href="/session3.html">
+                        <li>기업체 런천 프로그램</li>
+                    </a>
+                    <a href="/session4.html">
+                        <li class="active">사이언스 오픈 이노베이션 포럼 ·</li>
+                    </a>
+                    <a href="/session5.html">
+                        <li>특별강연</li>
+                    </a>
+                    <a href="/session6.html">
+                        <li>스타트업 토크 콘서트</li>
+                    </a>
+                    <a href="/session7.html">
+                        <li>시상식</li>
+                    </a>
+                    <a href="/all-day-event.html">
+                        <li>종일행사</li>
+                    </a>
+                    <a href="/archive.html">
+                        <li>SNU Bio-Day 아카이브</li>
+                    </a>
+                    <a href="/event-video.html">
+                        <li>행사영상</li>
+                    </a>
+                </ul>
+            </nav>
+
+            <button class="register-btn" onclick="window.open(applyURL, '_blank')">참가신청</button>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <section class="title-bar">바이오리더스 포럼</section>
+            <section class="content">
+                <div class="summation">
+                    <p>• 시간: 14:30 ~ 15:30(60분)<br>
+                        • 장소: 서울대학교 교수회관 2층 컨벤션홀
+                    </p>
+                </div>
+            </section>
+            <section class="text">
+                <h3>포럼 소개</h3>
+                <p class="detail">
+                    이번 사이언스오픈이노베이션 포럼은 과학 데이터 기반의 혁신적인 연구를 지원하고 초학제적인 연구활동을 촉진하기 위해 신규 개설된 대학 부설 연구소 과학데이터 혁신연구소를 비롯하여
+                    그린바이오, 유전공학, 융합과학기술, AI 분야에서 활발하게 활동하고 있는 서울대학교 교내 바이오 연구소의 핵심연구자를 모시고 각 연구소 소개 및 바이오 분야 최신 동향을 파악하고
+                    다양한 혁신 주체간 협력을 통한 미래 발전방향을 모색하고자 합니다.
+                </p>
+
+                <table>
+                    <thead>
+                        <th>
+                            <div class="profile">
+                                <img src="./img/UI/forum1.png" class="profile-img">
+                                <div class="profile-detail">
+                                    <h3>좌장</h3>
+                                    <p>강건욱 원장<br>
+                                        (서울대학교 생명공학공동연구원)
+                                    </p>
+                                </div>
+                            </div>
+                        </th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="profile">
+                                    <img src="./img/UI/forum2.png" class="profile-img">
+                                    <div class="profile-detail">
+                                        <h4>Understanding evolution through the lens of genomic variation</h4>
+                                        <p>정충원 교수<br>
+                                            (과학데이터 혁신연구소, 자연과학대학 협동과정 생물정보학전공)
+                                        </p>
+                                        <img src="./img/UI/forum2-1.png" class="profile-img2">
+                                    </div>
+                                    
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="profile">
+                                    <img src="./img/UI/forum3.png" class="profile-img">
+                                    <div class="profile-detail">
+                                        <h4>Understanding Food Systems for Smart Food Processing</h4>
+                                        <p>정동화 부원장<br>
+                                            (그린바이오 과학기술연구원, 국제농업기술대학원 국제농업기술학과 교수)
+                                        </p>
+                                        <img src="./img/UI/forum3-1.png" class="profile-img2">
+                                    </div>
+                                    
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="profile">
+                                    <img src="./img/UI/forum4.png" class="profile-img">
+                                    <div class="profile-detail">
+                                        <h4>T세포 휴지기전 연구</h4>
+                                        <p>황수석 교수<br>
+                                            (유전공학연구소, 자연과학대학 협동과정 유전공학전공)
+                                        </p>
+                                        <img src="./img/UI/forum4-1.png" class="profile-img2">
+                                    </div>
+                                    
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="profile">
+                                    <img src="./img/UI/forum5.png" class="profile-img">
+                                    <div class="profile-detail">
+                                        <h4>초고분해능 형광 현미경 기술 및 응용</h4>
+                                        <p>김정민 교수<br>
+                                            (융합과학기술대학원, 융합과학기술대학원 응용바이오공학과)
+                                        </p>
+                                        <img src="./img/UI/forum5-1.png" class="profile-img2">
+                                    </div>
+                                    
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="profile">
+                                    <img src="./img/UI/forum6.png" class="profile-img">
+                                    <div class="profile-detail">
+                                        <h4>Synthesis prediction for small molecules using AI</h4>
+                                        <p>정유성 교수<br>
+                                            (AI연구원, 공과대학 협동과정 인공지능전공)
+                                        </p>
+                                        <img src="./img/UI/forum6-1.png" class="profile-img2">
+                                    </div>
+                                    
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </section>
+
+
+        </main>
+    </div>
+
+    <script>
+        // 간단한 인터랙션 추가
+        document.addEventListener('DOMContentLoaded', function () {
+            // 네비게이션 메뉴 클릭 이벤트
+            const navItems = document.querySelectorAll('.nav-menu li');
+            navItems.forEach(item => {
+                item.addEventListener('click', function () {
+                    // 모든 메뉴에서 active 클래스 제거
+                    navItems.forEach(nav => nav.classList.remove('active'));
+                    // 클릭한 메뉴에 active 클래스 추가
+                    this.classList.add('active');
+                });
+
+                // 호버 효과
+                // item.addEventListener('mouseenter', function() {
+                //     if (!this.classList.contains('active')) {
+                //         this.style.color = '#000000';
+                //     }
+                // });
+                // item.addEventListener('mouseleave', function() {
+                //     if (!this.classList.contains('active')) {
+                //         this.style.color = '#8e8e93';
+                //     }
+                // });
+            });
+
+            
+        });
+    </script>
+</body>
+
+</html>
