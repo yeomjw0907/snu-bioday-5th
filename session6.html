@@ -368,27 +368,152 @@
             font-size: 14px;
         }
 
-        @media (max-width: 1024px) {
-            .partners-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
+        .appbar {
+            display: none;
         }
 
-        @media (max-width: 768px) {
-            .sidebar {
-                width: 100%;
-                position: relative;
-                height: auto;
-                padding: 15px;
-            }
+        .directions-btn {
+            display: none;
+            /* width: 100%; */
+            padding: 12px;
+            background-color: #0f2351;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            font-size: 25px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 22px;
+            width: 204px;
+            margin-left: 41px;
+        }
 
-            .nav-menu li.active::before {
-                left: -15px;
+
+        @media (max-width: 768px) {
+
+            .sidebar {
+                display: none;
             }
 
             .main-content {
+                flex: 1;
+                width: 100vw !important;
                 margin-left: 0;
+            }
+
+
+
+            .appbar {
+                background-color: rgb(255, 255, 255);
+                display: flex !important;
+                justify-content: space-between;
+                align-items: center;
+                padding-left: 20px;
+                height: 111px;
                 width: 100%;
+
+
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 1000;
+            }
+
+            .logo {
+                height: 100px;
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+
+            .menu-icon {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                cursor: pointer;
+                padding-right: 20px;
+                padding-top: 40px;
+                padding-bottom: 40px;
+                padding-left: 40px;
+            }
+
+            .menu-icon div {
+                width: 30px;
+                height: 5px;
+                background-color: #0f0f2e;
+                border-radius: 2px;
+            }
+
+            .sidebar {
+                width: 279px;
+                display: block;
+                position: fixed;
+                top: 0;
+                right: -100%;
+                /* width: 80%; */
+                height: 100vh;
+                background-color: white;
+                transition: right 0.3s ease-in-out;
+                z-index: 2001;
+                padding: 0px;
+            }
+
+            .sidebar.active {
+                right: 0;
+            }
+
+            .sidebar-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(0, 0, 0, 0);
+                z-index: 2000;
+                opacity: 0;
+                transition: background-color 0.3s ease, opacity 0.3s ease;
+                pointer-events: none;
+            }
+
+            .sidebar-overlay.active {
+                background-color: rgba(0, 0, 0, 0.5);
+                opacity: 1;
+                pointer-events: auto;
+            }
+
+            .nav-menu {
+                list-style: none;
+                margin-bottom: 32px;
+                padding-left: 54px;
+                border-left: none;
+                margin-top: 89px;
+            }
+
+            .nav-menu li.active::before {
+                content: '';
+                position: absolute;
+                left: -15px;
+                top: 0;
+                bottom: 0;
+                width: 3px;
+                background-color: #fff;
+                /* 분홍색/마젠타 색상 */
+            }
+
+            .sidebar img {
+                width: 201px;
+                margin: 0 auto;
+                padding-top: 25px;
+            }
+
+            .sidebar .register-btn {
+                width: 204px;
+                margin-left: 41px;
+            }
+
+            .directions-btn {
+                display: block;
             }
         }
     </style>
@@ -396,8 +521,21 @@
 </head>
 
 <body>
+
+    <div class="appbar">
+        <a class="logo" href="/main.html">
+            <img src="./img/UI/logo.png" alt="SNU Logo">
+        </a>
+        <div class="menu-icon" id="menu-icon">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
     <div class="container">
         <!-- Sidebar -->
+        <div id="sidebarOverlay" class="sidebar-overlay"></div>
         <aside class="sidebar">
             <a class="logo" href="/main.html">
                 <img src="./img/UI/logo.png" alt="Seoul National University Bio-MAX Institute">
@@ -445,10 +583,13 @@
             </nav>
 
             <button class="register-btn" onclick="window.open(applyURL, '_blank')">참가신청</button>
+            <button class="directions-btn" onclick="location.href='/directions.html'">오시는길</button>
         </aside>
 
         <!-- Main Content -->
         <main class="main-content">
+            <div style="height:111px;"></div>
+
             <section class="title-bar">스타트업 토크 콘서트</section>
             <section class="content">
                 <div class="summation">
@@ -460,7 +601,8 @@
             <section class="text">
                 <h3>포럼 소개</h3>
                 <p class="detail">
-                    서울대학교 교원 창업자들을 초청하여 혁신적인 스타트업 아이디어를 소개하는 피칭 프로그램입니다. 이 프로그램은 교원들의 창업 경험과 비즈니스 통찰을 공유하며, 서울대학교의 바이오 네트워크에서의 교류를 통해 창의적인 시너지를 창출하는 기회를 제공합니다.
+                    서울대학교 교원 창업자들을 초청하여 혁신적인 스타트업 아이디어를 소개하는 피칭 프로그램입니다. 이 프로그램은 교원들의 창업 경험과 비즈니스 통찰을 공유하며, 서울대학교의 바이오
+                    네트워크에서의 교류를 통해 창의적인 시너지를 창출하는 기회를 제공합니다.
                 </p>
             </section>
 
@@ -468,47 +610,47 @@
                 <h3>강연자 정보</h3>
                 <div class="speaker-grid">
                     <div class="speaker-card">
-                      <img src="./img/UI/lecturer1.png" alt="박정규 교수">
-                      <div class="speaker-role">면역조절 신약</div>
-                      <div class="speaker-name">박정규 교수</div>
-                      <div class="speaker-company">(주)피비이뮨테라퓨틱스</div>
+                        <img src="./img/UI/lecturer1.png" alt="박정규 교수">
+                        <div class="speaker-role">면역조절 신약</div>
+                        <div class="speaker-name">박정규 교수</div>
+                        <div class="speaker-company">(주)피비이뮨테라퓨틱스</div>
                     </div>
-                
+
                     <div class="speaker-card">
-                      <img src="./img/UI/lecturer2.png" alt="예성준 교수">
-                      <div class="speaker-role">난치암 치료 진단 장비</div>
-                      <div class="speaker-name">예성준 교수</div>
-                      <div class="speaker-company">(주)티로흐(T-ROH)</div>
+                        <img src="./img/UI/lecturer2.png" alt="예성준 교수">
+                        <div class="speaker-role">난치암 치료 진단 장비</div>
+                        <div class="speaker-name">예성준 교수</div>
+                        <div class="speaker-company">(주)티로흐(T-ROH)</div>
                     </div>
-                
+
                     <div class="speaker-card">
-                      <img src="./img/UI/lecturer3.png" alt="오석배 교수">
-                      <div class="speaker-role">만성통증 치료제</div>
-                      <div class="speaker-name">오석배 교수</div>
-                      <div class="speaker-company">(주)오랩바이오</div>
+                        <img src="./img/UI/lecturer3.png" alt="오석배 교수">
+                        <div class="speaker-role">만성통증 치료제</div>
+                        <div class="speaker-name">오석배 교수</div>
+                        <div class="speaker-company">(주)오랩바이오</div>
                     </div>
-                
+
                     <div class="speaker-card">
-                      <img src="./img/UI/lecturer4.png" alt="이윤상 교수">
-                      <div class="speaker-role">항암 진단병합치료제</div>
-                      <div class="speaker-name">이윤상 교수</div>
-                      <div class="speaker-company">(주)클리켐바이오</div>
+                        <img src="./img/UI/lecturer4.png" alt="이윤상 교수">
+                        <div class="speaker-role">항암 진단병합치료제</div>
+                        <div class="speaker-name">이윤상 교수</div>
+                        <div class="speaker-company">(주)클리켐바이오</div>
                     </div>
-                
+
                     <div class="speaker-card">
-                      <img src="./img/UI/lecturer5.png" alt="이준영 교수">
-                      <div class="speaker-role">디지털치료기기</div>
-                      <div class="speaker-name">이준영 교수</div>
-                      <div class="speaker-company">(주)이모코그</div>
+                        <img src="./img/UI/lecturer5.png" alt="이준영 교수">
+                        <div class="speaker-role">디지털치료기기</div>
+                        <div class="speaker-name">이준영 교수</div>
+                        <div class="speaker-company">(주)이모코그</div>
                     </div>
-                
+
                     <div class="speaker-card">
-                      <img src="./img/UI/lecturer6.png" alt="최승홍 교수">
-                      <div class="speaker-role">나노물질 기반 신약</div>
-                      <div class="speaker-name">최승홍 교수</div>
-                      <div class="speaker-company">(주)현텍엔바이오</div>
+                        <img src="./img/UI/lecturer6.png" alt="최승홍 교수">
+                        <div class="speaker-role">나노물질 기반 신약</div>
+                        <div class="speaker-name">최승홍 교수</div>
+                        <div class="speaker-company">(주)현텍엔바이오</div>
                     </div>
-                  </div>
+                </div>
             </section>
 
 
@@ -541,6 +683,21 @@
                 // });
             });
 
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.getElementById('menu-icon');
+            const mobileSidebar = document.querySelector('.sidebar');
+            const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+            function toggleMenu() {
+                mobileSidebar.classList.toggle('active');
+                sidebarOverlay.classList.toggle('active');
+            }
+
+            menuToggle.addEventListener('click', toggleMenu);
+            sidebarOverlay.addEventListener('click', toggleMenu);
         });
     </script>
 </body>

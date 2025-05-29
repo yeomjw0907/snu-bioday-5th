@@ -273,27 +273,152 @@
             margin-left: 6px;
         }
 
-        @media (max-width: 1024px) {
-            .partners-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
+        .appbar {
+            display: none;
         }
 
-        @media (max-width: 768px) {
-            .sidebar {
-                width: 100%;
-                position: relative;
-                height: auto;
-                padding: 15px;
-            }
+        .directions-btn {
+            display: none;
+            /* width: 100%; */
+            padding: 12px;
+            background-color: #0f2351;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            font-size: 25px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 22px;
+            width: 204px;
+            margin-left: 41px;
+        }
 
-            .nav-menu li.active::before {
-                left: -15px;
+
+        @media (max-width: 768px) {
+
+            .sidebar {
+                display: none;
             }
 
             .main-content {
+                flex: 1;
+                width: 100vw !important;
                 margin-left: 0;
+            }
+
+
+
+            .appbar {
+                background-color: rgb(255, 255, 255);
+                display: flex !important;
+                justify-content: space-between;
+                align-items: center;
+                padding-left: 20px;
+                height: 111px;
                 width: 100%;
+
+
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 1000;
+            }
+
+            .logo {
+                height: 100px;
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+
+            .menu-icon {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                cursor: pointer;
+                padding-right: 20px;
+                padding-top: 40px;
+                padding-bottom: 40px;
+                padding-left: 40px;
+            }
+
+            .menu-icon div {
+                width: 30px;
+                height: 5px;
+                background-color: #0f0f2e;
+                border-radius: 2px;
+            }
+
+            .sidebar {
+                width: 279px;
+                display: block;
+                position: fixed;
+                top: 0;
+                right: -100%;
+                /* width: 80%; */
+                height: 100vh;
+                background-color: white;
+                transition: right 0.3s ease-in-out;
+                z-index: 2001;
+                padding: 0px;
+            }
+
+            .sidebar.active {
+                right: 0;
+            }
+
+            .sidebar-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(0, 0, 0, 0);
+                z-index: 2000;
+                opacity: 0;
+                transition: background-color 0.3s ease, opacity 0.3s ease;
+                pointer-events: none;
+            }
+
+            .sidebar-overlay.active {
+                background-color: rgba(0, 0, 0, 0.5);
+                opacity: 1;
+                pointer-events: auto;
+            }
+
+            .nav-menu {
+                list-style: none;
+                margin-bottom: 32px;
+                padding-left: 54px;
+                border-left: none;
+                margin-top: 89px;
+            }
+
+            .nav-menu li.active::before {
+                content: '';
+                position: absolute;
+                left: -15px;
+                top: 0;
+                bottom: 0;
+                width: 3px;
+                background-color: #fff;
+                /* 분홍색/마젠타 색상 */
+            }
+
+            .sidebar img {
+                width: 201px;
+                margin: 0 auto;
+                padding-top: 25px;
+            }
+
+            .sidebar .register-btn {
+                width: 204px;
+                margin-left: 41px;
+            }
+
+            .directions-btn {
+                display: block;
             }
         }
     </style>
@@ -301,8 +426,21 @@
 </head>
 
 <body>
+
+    <div class="appbar">
+        <a class="logo" href="/main.html">
+            <img src="./img/UI/logo.png" alt="SNU Logo">
+        </a>
+        <div class="menu-icon" id="menu-icon">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
     <div class="container">
         <!-- Sidebar -->
+        <div id="sidebarOverlay" class="sidebar-overlay"></div>
         <aside class="sidebar">
             <a class="logo" href="/main.html">
                 <img src="./img/UI/logo.png" alt="Seoul National University Bio-MAX Institute">
@@ -350,21 +488,24 @@
             </nav>
 
             <button class="register-btn" onclick="window.open(applyURL, '_blank')">참가신청</button>
+            <button class="directions-btn" onclick="location.href='/directions.html'">오시는길</button>
         </aside>
 
         <!-- Main Content -->
         <main class="main-content">
+            <div style="height:111px;"></div>
+
             <section class="title-bar">SNU Bio-Day 아카이브</section>
 
             <section class="content">
-                <a class="apply-button" href="https://snubioday.snu.ac.kr/old/2021/main/main.php" target="_blank">제 1회 SNU Bio-Day <img src="./svg/UI/arrow.svg"
-                        alt="바로가기 아이콘" class="arrow-icon" /></a>
-                <a class="apply-button" href="https://snubioday.snu.ac.kr/old/2022/" target="_blank">제 2회 SNU Bio-Day <img src="./svg/UI/arrow.svg" alt="바로가기 아이콘"
-                        class="arrow-icon" /></a>
-                <a class="apply-button" href="https://snubioday.snu.ac.kr/old/2023/" target="_blank">제 3회 SNU Bio-Day <img src="./svg/UI/arrow.svg" alt="바로가기 아이콘"
-                        class="arrow-icon" /></a>
-                <a class="apply-button" href="https://snubioday.snu.ac.kr/old/2024/" target="_blank">제 4회 SNU Bio-Day <img src="./svg/UI/arrow.svg" alt="바로가기 아이콘"
-                        class="arrow-icon" /></a>
+                <a class="apply-button" href="https://snubioday.snu.ac.kr/old/2021/main/main.php" target="_blank">제 1회
+                    SNU Bio-Day <img src="./svg/UI/arrow.svg" alt="바로가기 아이콘" class="arrow-icon" /></a>
+                <a class="apply-button" href="https://snubioday.snu.ac.kr/old/2022/" target="_blank">제 2회 SNU Bio-Day
+                    <img src="./svg/UI/arrow.svg" alt="바로가기 아이콘" class="arrow-icon" /></a>
+                <a class="apply-button" href="https://snubioday.snu.ac.kr/old/2023/" target="_blank">제 3회 SNU Bio-Day
+                    <img src="./svg/UI/arrow.svg" alt="바로가기 아이콘" class="arrow-icon" /></a>
+                <a class="apply-button" href="https://snubioday.snu.ac.kr/old/2024/" target="_blank">제 4회 SNU Bio-Day
+                    <img src="./svg/UI/arrow.svg" alt="바로가기 아이콘" class="arrow-icon" /></a>
             </section>
 
 
@@ -399,6 +540,21 @@
             });
 
 
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.getElementById('menu-icon');
+            const mobileSidebar = document.querySelector('.sidebar');
+            const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+            function toggleMenu() {
+                mobileSidebar.classList.toggle('active');
+                sidebarOverlay.classList.toggle('active');
+            }
+
+            menuToggle.addEventListener('click', toggleMenu);
+            sidebarOverlay.addEventListener('click', toggleMenu);
         });
     </script>
 </body>
