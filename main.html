@@ -30,6 +30,8 @@
     <meta name="twitter:description" content="제5회 SNU Bio-Day / 2025.09.25 개최">
     <meta name="twitter:image" content="./thumbnail.png">
     <!-- END TWITTERCARD -->
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js"
+        integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
     <style>
         /* 100 ‧ Thin */
         @font-face {
@@ -111,6 +113,17 @@
             -webkit-font-smoothing: antialiased;
             letter-spacing: -0.03em;
 
+        }
+
+        .floating-animation {
+            opacity: 0.0;
+            transform: translateY(20px);
+            transition: all 0.5s ease-in-out;
+        }
+
+        .show {
+            opacity: 1.0;
+            transform: translateY(0px);
         }
 
         .row {
@@ -517,7 +530,7 @@
         .partners {
             padding: 60px 20px;
             background-color: #ffffff;
-            margin-bottom: 100px;
+            margin-bottom: 240px;
         }
 
         .partner-main {
@@ -862,12 +875,12 @@
 
 
 
-            .partner-main{
+            .partner-main {
                 margin-left: 0;
                 margin-bottom: 8px;
             }
 
-            .partner-main img{
+            .partner-main img {
                 width: 232px;
             }
 
@@ -960,7 +973,7 @@
 
 
             <!-- Hero Section -->
-            <section class="hero">
+            <section class="hero floating-animation" id="hero">
                 <div class="hero-content">
                     <h1><span style="font-weight: 900;">SNU</span>BIODAY</h1>
                     <p class="subtitle">Global Bio-Innovation, Starts Here</p>
@@ -977,12 +990,12 @@
             <!-- Event Information -->
             <section class="event-info">
                 <div class="event-info-container">
-                    <h2>서울대학교 바이오융합 분야의<br><span>연구 네트워크 강화 및 기술사업화 활성화</span></h2>
+                    <h2 class="floating-animation">서울대학교 바이오융합 분야의<br><span>연구 네트워크 강화 및 기술사업화 활성화</span></h2>
 
                     <div class="event-details">
 
-                        <strong>
-                            <div class="row">
+                        <strong >
+                            <div class="row floating-animation">
                                 <div style="white-space: nowrap; line-height: 20px;">
                                     <p>목적 :&nbsp;</p>
                                 </div>
@@ -992,17 +1005,17 @@
                                 </div>
                             </div>
                         </strong>
-                        <p>일시 : 2025.09.25. (수)</p>
-                        <p>장소 : 서울대학교 교수회관 컨벤션홀 (65동)</p>
-                        <p>
-                        <div class="row">
+                        <p class="floating-animation">일시 : 2025.09.25. (수)</p>
+                        <p class="floating-animation">장소 : 서울대학교 교수회관 컨벤션홀 (65동)</p>
+                        <p class="floating-animation">
+                        <div class="row floating-animation" >
                             <div style="white-space: nowrap; line-height: 20px;">주최 :&nbsp;</div>
                             <div style="line-height: 20px;">서울대학교 산학협력단, 창업지원단, 램프(LAMP)사업단</div>
                         </div>
                         </p>
-                        <p>주관 : 서울대학교 생명공학공동연구원</p>
+                        <p class="floating-animation">주관 : 서울대학교 생명공학공동연구원</p>
 
-                        <div class="row">
+                        <div class="row floating-animation">
                             <div style="white-space: nowrap;">
                                 <p>문의 :&nbsp;</p>
                             </div>
@@ -1011,26 +1024,26 @@
                             </div>
                         </div>
 
-                        <p class="highlight">※ 사전등록 필수 (9월 6일 마감) / 현장등록 불가</p>
+                        <p class="highlight floating-animation">※ 사전등록 필수 (9월 6일 마감) / 현장등록 불가</p>
                     </div>
                 </div>
             </section>
 
             <!-- Feature Cards -->
             <section class="feature-cards">
-                <a class="feature-card registration" id="applyLink" target="_blank">
+                <a class="feature-card registration floating-animation" id="applyLink" target="_blank">
                     <h3>참가신청</h3>
                     <button class="apply-button">바로가기 <img src="./svg/UI/arrow.svg" alt="바로가기 아이콘"
                             class="arrow-icon" /></button>
                 </a>
 
-                <a class="feature-card poster" href="/all-day-event.html">
+                <a class="feature-card poster floating-animation" href="/all-day-event.html">
                     <h3>포스터 공모</h3>
                     <button class="apply-button">바로가기 <img src="./svg/UI/arrow.svg" alt="바로가기 아이콘"
                             class="arrow-icon" /></button>
                 </a>
 
-                <a class="feature-card directions" href="/directions.html">
+                <a class="feature-card directions floating-animation" href="/directions.html">
                     <h3>오시는 길</h3>
                     <button class="apply-button">서울대학교 교수회관 <img src="./svg/UI/arrow.svg" alt="바로가기 아이콘"
                             class="arrow-icon" /></button>
@@ -1042,11 +1055,11 @@
             <!-- Program Section -->
             <section class="program">
                 <div class="program-container">
-                    <h2>Program</h2>
+                    <h2 class="floating-animation">Program</h2>
 
                     <div class="program-grid">
                         <!-- 축사 -->
-                        <div class="program-section">
+                        <div class="program-section floating-animation">
                             <h3>축사</h3>
                             <div class="speaker">
                                 <div class="speaker-photo">
@@ -1060,7 +1073,7 @@
                         </div>
 
                         <!-- 격려사 및 시상 -->
-                        <div class="program-section">
+                        <div class="program-section floating-animation">
                             <h3>격려사 및 시상</h3>
                             <div class="speaker">
                                 <div class="speaker-photo">
@@ -1075,7 +1088,7 @@
                         </div>
 
                         <!-- 기조강연 -->
-                        <div class="program-section">
+                        <div class="program-section floating-animation">
                             <h3>기조강연</h3>
                             <div class="speaker">
                                 <div class="speaker-photo">
@@ -1094,7 +1107,7 @@
                         </div>
 
                         <!-- 특별강연 -->
-                        <div class="program-section">
+                        <div class="program-section floating-animation">
                             <h3>특별강연</h3>
                             <div class="speaker">
                                 <div class="speaker-photo">
@@ -1117,66 +1130,66 @@
             <!-- Partner Companies -->
             <section class="partners">
                 <div class="partners-container">
-                    <h2>Partner company</h2>
-                    <div class="partner-main">
+                    <h2 class="floating-animation">Partner company</h2>
+                    <div class="partner-main floating-animation">
                         <img src="./img/UI/partner1.png" alt="SK 바이오팜">
                     </div>
                     <div class="partners-grid">
 
-                        <div class="partner-logo">
+                        <div class="partner-logo floating-animation">
                             <img src="./img/UI/partner2.png" alt="MERCK">
                         </div>
-                        <div class="partner-logo">
+                        <div class="partner-logo floating-animation">
                             <img src="./img/UI/partner3.png" alt="revvity">
                         </div>
-                        <div class="partner-logo">
+                        <div class="partner-logo floating-animation">
                             <img src="./img/UI/partner4.png" alt="GW Think">
                         </div>
-                        <div class="partner-logo">
+                        <div class="partner-logo floating-animation">
                             <img src="./img/UI/partner5.png" alt="aladdin">
                         </div>
-                        <div class="partner-logo">
+                        <div class="partner-logo floating-animation">
                             <img src="./img/UI/partner6.png" alt="QIAGEN">
                         </div>
 
-                        <div class="partner-logo">
+                        <div class="partner-logo floating-animation">
                             <img src="./img/UI/partner7.png" alt="SCOP">
                         </div>
-                        <div class="partner-logo">
+                        <div class="partner-logo floating-animation">
                             <img src="./img/UI/partner8.png" alt="Leica">
                         </div>
-                        <div class="partner-logo">
+                        <div class="partner-logo floating-animation">
                             <img src="./img/UI/partner9.png" alt="신테카바이오">
                         </div>
-                        <div class="partner-logo">
+                        <div class="partner-logo floating-animation">
                             <img src="./img/UI/partner10.png" alt="농림부">
                         </div>
-                        <div class="partner-logo">
+                        <div class="partner-logo floating-animation">
                             <img src="./img/UI/partner11.png" alt="나노바이오텍">
                         </div>
-                        <div class="partner-logo">
+                        <div class="partner-logo floating-animation">
                             <img src="./img/UI/partner12.png" alt="바이오디자인">
                         </div>
 
-                        <div class="partner-logo">
+                        <div class="partner-logo floating-animation">
                             <img src="./img/UI/partner13.png" alt="T-RICH">
                         </div>
-                        <div class="partner-logo">
+                        <div class="partner-logo floating-animation">
                             <img src="./img/UI/partner14.png" alt="soltue">
                         </div>
-                        <div class="partner-logo">
+                        <div class="partner-logo floating-animation">
                             <img src="./img/UI/partner15.png" alt="한국산업기술진흥원">
                         </div>
-                        <div class="partner-logo">
+                        <div class="partner-logo floating-animation">
                             <img src="./img/UI/partner16.png" alt="한약진">
                         </div>
-                        <div class="partner-logo">
+                        <div class="partner-logo floating-animation">
                             <img src="./img/UI/partner17.png" alt="메디톡스">
                         </div>
-                        <div class="partner-logo">
+                        <div class="partner-logo floating-animation">
                             <img src="./img/UI/partner18.png" alt="QIAGEN">
                         </div>
-                        <div class="partner-logo">
+                        <div class="partner-logo floating-animation">
                             <img src="./img/UI/partner19.png" alt="QIAGEN">
                         </div>
 
@@ -1215,6 +1228,24 @@
 
             document.getElementById("applyLink").href = applyURL;
         });
+
+        $(window).on("load", () => {
+            function animate() {
+                var scrollY = $(window).scrollTop();
+                $('.floating-animation').each(function () {
+                    if (scrollY + window.innerHeight * 0.7 > $(this).offset().top) {
+                        $(this).addClass('show');
+                    } else {
+                        // $(this).removeClass('show');
+                    }
+                });
+            }
+
+            animate();
+
+            $(window).on("scroll", animate);
+        });
+
     </script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
