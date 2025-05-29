@@ -30,13 +30,11 @@
     <meta name="twitter:description" content="제5회 SNU Bio-Day / 2025.09.25 개최">
     <meta name="twitter:image" content="./thumbnail.png">
     <!-- END TWITTERCARD -->
-    <script src="https://code.jquery.com/jquery-3.7.1.slim.js"
-        integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
     <style>
         /* 100 ‧ Thin */
         @font-face {
             font-family: "YoonGothicPro";
-            src: url("./font/YoonGothic700/YoonGothicPro710.ttf") format("truetype");
+            src: url("./font/YoonGothic700/YoonGothicPro710.woff2") format("truetype");
             font-weight: 100;
             font-style: normal;
         }
@@ -44,7 +42,7 @@
         /* 200 ‧ ExtraLight */
         @font-face {
             font-family: "YoonGothicPro";
-            src: url("./font/YoonGothic700/YoonGothicPro720.ttf") format("truetype");
+            src: url("./font/YoonGothic700/YoonGothicPro720.woff2") format("truetype");
             font-weight: 200;
             font-style: normal;
         }
@@ -52,7 +50,7 @@
         /* 300 ‧ Light */
         @font-face {
             font-family: "YoonGothicPro";
-            src: url("./font/YoonGothic700/YoonGothicPro730.ttf") format("truetype");
+            src: url("./font/YoonGothic700/YoonGothicPro730.woff2") format("truetype");
             font-weight: 300;
             font-style: normal;
         }
@@ -60,7 +58,7 @@
         /* 400 ‧ Regular */
         @font-face {
             font-family: "YoonGothicPro";
-            src: url("./font/YoonGothic700/YoonGothicPro740.ttf") format("truetype");
+            src: url("./font/YoonGothic700/YoonGothicPro740.woff2") format("truetype");
             font-weight: 400;
             font-style: normal;
         }
@@ -68,7 +66,7 @@
         /* 500 ‧ Medium */
         @font-face {
             font-family: "YoonGothicPro";
-            src: url("./font/YoonGothic700/YoonGothicPro750.ttf") format("truetype");
+            src: url("./font/YoonGothic700/YoonGothicPro750.woff2") format("truetype");
             font-weight: 500;
             font-style: normal;
         }
@@ -76,7 +74,7 @@
         /* 600 ‧ SemiBold */
         @font-face {
             font-family: "YoonGothicPro";
-            src: url("./font/YoonGothic700/YoonGothicPro760.ttf") format("truetype");
+            src: url("./font/YoonGothic700/YoonGothicPro760.woff2") format("truetype");
             font-weight: 600;
             font-style: normal;
         }
@@ -84,7 +82,7 @@
         /* 700 ‧ Bold */
         @font-face {
             font-family: "YoonGothicPro";
-            src: url("./font/YoonGothic700/YoonGothicPro770.ttf") format("truetype");
+            src: url("./font/YoonGothic700/YoonGothicPro770.woff2") format("truetype");
             font-weight: 700;
             font-style: normal;
         }
@@ -92,7 +90,7 @@
         /* 800 ‧ ExtraBold */
         @font-face {
             font-family: "YoonGothicPro";
-            src: url("./font/YoonGothic700/YoonGothicPro780.ttf") format("truetype");
+            src: url("./font/YoonGothic700/YoonGothicPro780.woff2") format("truetype");
             font-weight: 800;
             font-style: normal;
         }
@@ -100,7 +98,7 @@
         /* 900 ‧ Black */
         @font-face {
             font-family: "YoonGothicPro";
-            src: url("./font/YoonGothic700/YoonGothicPro790.ttf") format("truetype");
+            src: url("./font/YoonGothic700/YoonGothicPro790.woff2") format("truetype");
             font-weight: 900;
             font-style: normal;
         }
@@ -243,7 +241,7 @@
         /* Hero Section */
         .hero {
             height: 803px;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./img/UI/img1.png');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./img/UI/img1.webp');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -364,19 +362,19 @@
         }
 
         .feature-card.registration {
-            background: url('./img/UI/registration.png');
+            background: url('./img/UI/registration.webp');
             background-size: cover;
             color: #000000;
         }
 
         .feature-card.poster {
-            background: linear-gradient(rgba(15, 35, 81, 0.7), rgba(15, 35, 81, 0.7)), url('./img/UI/posterApply.png');
+            background: linear-gradient(rgba(15, 35, 81, 0.7), rgba(15, 35, 81, 0.7)), url('./img/UI/posterApply.webp');
             background-size: cover;
             color: #ffffff;
         }
 
         .feature-card.directions {
-            background: linear-gradient(rgba(15, 35, 81, 0.7), rgba(15, 35, 81, 0.7)), url('./img/UI/school.png');
+            background: linear-gradient(rgba(15, 35, 81, 0.7), rgba(15, 35, 81, 0.7)), url('./img/UI/school.webp');
             background-size: cover;
             color: #fff;
         }
@@ -902,7 +900,7 @@
 
     <div class="appbar">
         <a class="logo" href="/main.html">
-            <img src="./img/UI/logo.png" alt="SNU Logo">
+            <img src="./img/UI/logo.webp" alt="SNU Logo">
         </a>
         <div class="menu-icon" id="menu-icon">
             <div></div>
@@ -918,7 +916,7 @@
         <div id="sidebarOverlay" class="sidebar-overlay"></div>
         <aside class="sidebar" id="sidebar">
             <a class="logo" href="/main.html">
-                <img src="./img/UI/logo.png" alt="Seoul National University Bio-MAX Institute">
+                <img src="./img/UI/logo.webp" alt="Seoul National University Bio-MAX Institute">
             </a>
 
             <nav>
@@ -1063,7 +1061,7 @@
                             <h3>축사</h3>
                             <div class="speaker">
                                 <div class="speaker-photo">
-                                    <img src="./img/UI/speaker1.png" alt="유홍림 총장">
+                                    <img src="./img/UI/speaker1.webp" alt="유홍림 총장">
                                 </div>
                                 <div class="speaker-info">
                                     <h4>유홍림 총장</h4>
@@ -1077,7 +1075,7 @@
                             <h3>격려사 및 시상</h3>
                             <div class="speaker">
                                 <div class="speaker-photo">
-                                    <img src="./img/UI/speaker2.png" alt="김재현 연구부총장">
+                                    <img src="./img/UI/speaker2.webp" alt="김재현 연구부총장">
                                 </div>
                                 <div class="speaker-info">
                                     <h4>김재영 연구부총장</h4>
@@ -1092,7 +1090,7 @@
                             <h3>기조강연</h3>
                             <div class="speaker">
                                 <div class="speaker-photo">
-                                    <img src="./img/UI/speaker3.png" alt="권성준 교수">
+                                    <img src="./img/UI/speaker3.webp" alt="권성준 교수">
                                 </div>
                                 <div class="speaker-info">
                                     <h4>권성준 교수</h4>
@@ -1111,7 +1109,7 @@
                             <h3>특별강연</h3>
                             <div class="speaker">
                                 <div class="speaker-photo">
-                                    <img src="./img/UI/speaker4.png" alt="김명기 대표">
+                                    <img src="./img/UI/speaker4.webp" alt="김명기 대표">
                                 </div>
                                 <div class="speaker-info">
                                     <h4>김명기 대표</h4>
@@ -1132,65 +1130,65 @@
                 <div class="partners-container">
                     <h2 class="floating-animation">Partner company</h2>
                     <div class="partner-main floating-animation">
-                        <img src="./img/UI/partner1.png" alt="SK 바이오팜">
+                        <img src="./img/UI/partner1.webp" alt="SK 바이오팜">
                     </div>
                     <div class="partners-grid">
 
                         <div class="partner-logo floating-animation">
-                            <img src="./img/UI/partner2.png" alt="MERCK">
+                            <img src="./img/UI/partner2.webp" alt="MERCK">
                         </div>
                         <div class="partner-logo floating-animation">
-                            <img src="./img/UI/partner3.png" alt="revvity">
+                            <img src="./img/UI/partner3.webp" alt="revvity">
                         </div>
                         <div class="partner-logo floating-animation">
-                            <img src="./img/UI/partner4.png" alt="GW Think">
+                            <img src="./img/UI/partner4.webp" alt="GW Think">
                         </div>
                         <div class="partner-logo floating-animation">
-                            <img src="./img/UI/partner5.png" alt="aladdin">
+                            <img src="./img/UI/partner5.webp" alt="aladdin">
                         </div>
                         <div class="partner-logo floating-animation">
-                            <img src="./img/UI/partner6.png" alt="QIAGEN">
-                        </div>
-
-                        <div class="partner-logo floating-animation">
-                            <img src="./img/UI/partner7.png" alt="SCOP">
-                        </div>
-                        <div class="partner-logo floating-animation">
-                            <img src="./img/UI/partner8.png" alt="Leica">
-                        </div>
-                        <div class="partner-logo floating-animation">
-                            <img src="./img/UI/partner9.png" alt="신테카바이오">
-                        </div>
-                        <div class="partner-logo floating-animation">
-                            <img src="./img/UI/partner10.png" alt="농림부">
-                        </div>
-                        <div class="partner-logo floating-animation">
-                            <img src="./img/UI/partner11.png" alt="나노바이오텍">
-                        </div>
-                        <div class="partner-logo floating-animation">
-                            <img src="./img/UI/partner12.png" alt="바이오디자인">
+                            <img src="./img/UI/partner6.webp" alt="QIAGEN">
                         </div>
 
                         <div class="partner-logo floating-animation">
-                            <img src="./img/UI/partner13.png" alt="T-RICH">
+                            <img src="./img/UI/partner7.webp" alt="SCOP">
                         </div>
                         <div class="partner-logo floating-animation">
-                            <img src="./img/UI/partner14.png" alt="soltue">
+                            <img src="./img/UI/partner8.webp" alt="Leica">
                         </div>
                         <div class="partner-logo floating-animation">
-                            <img src="./img/UI/partner15.png" alt="한국산업기술진흥원">
+                            <img src="./img/UI/partner9.webp" alt="신테카바이오">
                         </div>
                         <div class="partner-logo floating-animation">
-                            <img src="./img/UI/partner16.png" alt="한약진">
+                            <img src="./img/UI/partner10.webp" alt="농림부">
                         </div>
                         <div class="partner-logo floating-animation">
-                            <img src="./img/UI/partner17.png" alt="메디톡스">
+                            <img src="./img/UI/partner11.webp" alt="나노바이오텍">
                         </div>
                         <div class="partner-logo floating-animation">
-                            <img src="./img/UI/partner18.png" alt="QIAGEN">
+                            <img src="./img/UI/partner12.webp" alt="바이오디자인">
+                        </div>
+
+                        <div class="partner-logo floating-animation">
+                            <img src="./img/UI/partner13.webp" alt="T-RICH">
                         </div>
                         <div class="partner-logo floating-animation">
-                            <img src="./img/UI/partner19.png" alt="QIAGEN">
+                            <img src="./img/UI/partner14.webp" alt="soltue">
+                        </div>
+                        <div class="partner-logo floating-animation">
+                            <img src="./img/UI/partner15.webp" alt="한국산업기술진흥원">
+                        </div>
+                        <div class="partner-logo floating-animation">
+                            <img src="./img/UI/partner16.webp" alt="한약진">
+                        </div>
+                        <div class="partner-logo floating-animation">
+                            <img src="./img/UI/partner17.webp" alt="메디톡스">
+                        </div>
+                        <div class="partner-logo floating-animation">
+                            <img src="./img/UI/partner18.webp" alt="QIAGEN">
+                        </div>
+                        <div class="partner-logo floating-animation">
+                            <img src="./img/UI/partner19.webp" alt="QIAGEN">
                         </div>
 
                     </div>
@@ -1229,22 +1227,24 @@
             document.getElementById("applyLink").href = applyURL;
         });
 
-        $(window).on("load", () => {
-            function animate() {
-                var scrollY = $(window).scrollTop();
-                $('.floating-animation').each(function () {
-                    if (scrollY + window.innerHeight * 0.7 > $(this).offset().top) {
-                        $(this).addClass('show');
-                    } else {
-                        // $(this).removeClass('show');
-                    }
-                });
+        window.addEventListener("load", () => {
+    function animate() {
+        const scrollY = window.scrollY;
+        const elements = document.querySelectorAll('.floating-animation');
+        elements.forEach(el => {
+            if (scrollY + window.innerHeight * 0.7 > el.getBoundingClientRect().top + window.scrollY) {
+                el.classList.add('show');
+            } else {
+                // el.classList.remove('show');
             }
-
-            animate();
-
-            $(window).on("scroll", animate);
         });
+    }
+
+    animate();
+
+    window.addEventListener("scroll", animate);
+});
+
 
     </script>
     <script>
