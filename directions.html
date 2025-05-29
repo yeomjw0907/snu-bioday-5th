@@ -519,6 +519,50 @@
             .directions-btn {
                 display: block;
             }
+
+            .title-bar{
+                height: 90px;
+                font-size: 25px;
+                padding-left: 20px;
+            }
+
+            .content {
+                margin-left: 20px;
+                margin-right: 20px;
+                margin-top: 33px;
+            }
+
+            .summation {
+                font-size: 15px;
+            }
+
+            .text {
+                margin-left: 20px;
+                margin-right: 20px;
+                margin-top: 33px;
+            }
+
+            .text h3{
+                font-size: 18px;
+            }
+
+            .text p{
+                font-size: 15px;
+            }
+
+            .map{
+                width: 350px;
+                height: auto;
+            }
+
+            .map-bar{
+                width: 350px;
+            }
+
+            .map-container{
+                width: 350px;
+                height: 201px;
+            }
         }
     </style>
     <script src="./env.js"></script>
@@ -598,14 +642,14 @@
             <section class="title-bar">오시는길</section>
             <section class="text">
                 <h3>서울대학교 교수회관</h3>
-                <div
-                    style="font:normal normal 400 12px/normal dotum, sans-serif; margin-top: 20px; width:640px; height:392px; color:#333; position:relative">
-                    <div style="height: 360px;"><a
+                <div class="map-container"
+                    style="font:normal normal 400 12px/normal dotum, sans-serif; margin-top: 20px; width:640px;  color:#333; position:relative">
+                    <div class="map-container"><a
                             href="https://map.kakao.com/?urlX=489802.99999999726&amp;urlY=1099557.9999999981&amp;itemId=11477726&amp;q=%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90%20%EA%B4%80%EC%95%85%EC%BA%A0%ED%8D%BC%EC%8A%A4%20%EA%B5%90%EC%88%98%ED%9A%8C%EA%B4%80&amp;srcid=11477726&amp;map_type=TYPE_MAP&amp;from=roughmap"
                             target="_blank"><img class="map"
                                 src="http://t1.daumcdn.net/roughmap/imgmap/0688641633b755dcbaf50052c0469031e62e28da97998a00807938a59e2833ae"
                                 width="638px" height="358px" style="border:1px solid #ccc;"></a></div>
-                    <div
+                    <div class="map-bar"
                         style="overflow: hidden; padding: 7px 11px; border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 0px 0px 2px 2px; background-color: rgb(249, 249, 249);">
                         <a href="https://map.kakao.com" target="_blank" style="float: left;"><img
                                 src="//t1.daumcdn.net/localimg/localimages/07/2018/pc/common/logo_kakaomap.png"
@@ -643,6 +687,7 @@
                     문의: snubio2024@gmail.com<br>
                     <span style="color: #17a2b8!important; font-weight:700;">당일 주차권 지급</span>
                 </p>
+                <div style="height: 100px;"></div>
             </section>
 
 
