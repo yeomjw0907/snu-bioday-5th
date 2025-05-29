@@ -110,6 +110,12 @@
             font-family: "YoonGothicPro", 'Noto Sans KR', sans-serif;
             -webkit-font-smoothing: antialiased;
             letter-spacing: -0.03em;
+
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
         }
 
         body {
@@ -245,7 +251,7 @@
         }
 
         .hero h1 {
-            font-size: 60px;
+            font-size: 80px;
             font-weight: 700;
             margin-bottom: 2px;
             letter-spacing: 2px;
@@ -254,7 +260,7 @@
         }
 
         .hero .subtitle {
-            font-size: 24px;
+            font-size: 28px;
             margin-bottom: 276px;
             font-weight: 200;
         }
@@ -265,7 +271,7 @@
             line-height: 1.5;
             /* margin: 0 auto; */
             margin-bottom: 56px;
-            color: #000;
+            color: #fff;
         }
 
 
@@ -574,10 +580,80 @@
             margin-left: 41px;
         }
 
+        @media (max-width: 1366px) {
+            .hero{
+                height: 519px;
+            }
+
+            .hero-content h1{
+                font-size: 60px;
+                margin-bottom: 0px;
+            }
+
+            .hero-content .subtitle{
+                margin-bottom: 147px;
+            }
+
+            .hero-content .description{
+                margin-bottom: 25px;
+            }
+
+            .event-info-container h2{
+                font-size: 38px;
+                line-height: 54px;
+            }
+
+            .event-info-container h2 span{
+                font-size: 38px;
+            }
+
+            .feature-card{
+                height: 190px;
+            }
+
+            .feature-card h3{
+                font-size: 19px;
+                margin-bottom: 11px;
+            }
+
+            .speaker-photo{
+                width: auto;
+                height: 120px;
+            }
+
+            .speaker-info h4 {
+                font-size: 15px;
+                margin-bottom: 4px;
+            }
+
+            .speaker-info p {
+                font-size: 9px;
+                line-height: 11px;
+            }
+
+            .partner-main{
+                width: 178px;
+            }
+
+            .partner-main img{
+                width: 178px;
+            }
+
+            .partner-logo{
+                width: 100px;
+                height: auto;
+            }
+
+            .partners-grid{
+                gap: 13px 13px;
+            }
+
+        }
+
 
         @media (max-width: 768px) {
 
-            .blank-top{
+            .blank-top {
                 height: 111px;
             }
 
@@ -704,6 +780,94 @@
             .directions-btn {
                 display: block;
             }
+
+            .hero {
+                height: 262px;
+            }
+
+            .hero-content {
+                height: 262px;
+                margin-left: 20px;
+                padding-top: 41px;
+            }
+
+            .hero-content h1 {
+                font-size: 45px;
+                height: 65px;
+            }
+
+            .hero-content .subtitle {
+                font-size: 15px;
+                margin-bottom: 71px;
+
+            }
+
+            .hero-content .description {
+                font-size: 12px;
+                color: white;
+                line-height: 15px;
+                padding-right: 40px;
+
+
+            }
+
+            .event-info-container h2 {
+                font-size: 25px;
+                /* width: 300px; */
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                word-break: keep-all;
+            }
+
+            .event-info-container h2 span {
+                font-size: 25px;
+                line-height: 33px;
+            }
+
+            .event-details {
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                word-break: keep-all;
+                font-size: 13px;
+            }
+
+            .feature-cards {
+                display: flex;
+                flex-direction: column;
+                margin: 0px 20px;
+            }
+
+            .feature-card {
+                height: 120px;
+                background-size: contain;
+            }
+
+            .feature-card.registration {
+                background-position: center
+            }
+
+            .feature-card h3 {
+                font-size: 19px;
+                margin-bottom: 11px;
+            }
+
+            .program-grid {
+                display: flex;
+                flex-direction: column;
+            }
+
+            
+
+            .partner-main {
+                margin-left: 0;
+                margin-bottom: 8px;
+            }
+
+            .partners-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 14px 14px;
+            }
+
         }
     </style>
     <script src="./env.js"></script>
@@ -784,7 +948,7 @@
         <!-- Main Content -->
         <main class="main-content">
             <div class="blank-top"></div>
-            
+
 
             <!-- Hero Section -->
             <section class="hero">
@@ -807,13 +971,37 @@
                     <h2>서울대학교 바이오융합 분야의<br><span>연구 네트워크 강화 및 기술사업화 활성화</span></h2>
 
                     <div class="event-details">
-                        <p><strong>목적: 서울대학교 바이오융합 분야의 학내외 연구 네트워크 강화<br>
-                                서울대학교 바이오 중개협업 및 바이오 신업체 참여를 통한 기술사업화 활성화</strong></p>
-                        <p>일시: 2025.09.25. (수)</p>
-                        <p>장소: 서울대학교 교수회관 컨벤션홀 (65동)</p>
-                        <p>주최: 서울대학교 산학협력단, 창업지원단, 램프(LAMP)사업단</p>
-                        <p>주관: 서울대학교 생명공학공동연구원</p>
-                        <p>문의: Tel. 02-880-2855 / Email. sunbio2024@gmail.com</p>
+
+                        <strong>
+                            <div class="row">
+                                <div style="white-space: nowrap; line-height: 20px;">
+                                    <p>목적 :&nbsp;</p>
+                                </div>
+                                <div style="line-height: 20px;">
+                                    <p>서울대학교 바이오융합 분야의 학내외 연구 네트워크 강화<br>
+                                        서울대학교 바이오 중개협업 및 바이오 신업체 참여를 통한 기술사업화 활성화</p>
+                                </div>
+                            </div>
+                        </strong>
+                        <p>일시 : 2025.09.25. (수)</p>
+                        <p>장소 : 서울대학교 교수회관 컨벤션홀 (65동)</p>
+                        <p>
+                        <div class="row">
+                            <div style="white-space: nowrap; line-height: 20px;">주최 :&nbsp;</div>
+                            <div style="line-height: 20px;">서울대학교 산학협력단, 창업지원단, 램프(LAMP)사업단</div>
+                        </div>
+                        </p>
+                        <p>주관 : 서울대학교 생명공학공동연구원</p>
+
+                        <div class="row">
+                            <div style="white-space: nowrap;">
+                                <p>문의 :&nbsp;</p>
+                            </div>
+                            <div>
+                                <p>Tel. 02-880-2855 / Email. sunbio2024@gmail.com</p>
+                            </div>
+                        </div>
+
                         <p class="highlight">※ 사전등록 필수 (9월 6일 마감) / 현장등록 불가</p>
                     </div>
                 </div>
