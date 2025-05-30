@@ -36,70 +36,8 @@
 
 <body>
 
-    <div class="appbar">
-        <a class="logo" href="/main.html">
-            <img src="./img/UI/logo.webp" alt="SNU Logo">
-        </a>
-        <div class="menu-icon" id="menu-icon">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
-
+    <header data-include="/partials/appbar.html" data-active="session3"></header>
     <div class="container">
-        <!-- Sidebar -->
-        <div id="sidebarOverlay" class="sidebar-overlay"></div>
-        <aside class="sidebar">
-            <a class="logo" href="/main.html">
-                <img src="./img/UI/logo.webp" alt="Seoul National University Bio-MAX Institute">
-            </a>
-
-            <nav>
-                <ul class="nav-menu">
-                    <a href="/greetings.html">
-                        <li>인사말</li>
-                    </a>
-                    <a href="/program.html">
-                        <li>프로그램</li>
-                    </a>
-                    <a href="/session1.html">
-                        <li>바이오 커넥트 프로그램</li>
-                    </a>
-                    <a href="/session2.html">
-                        <li>도넛데이 세션/BIO OX 퀴즈</li>
-                    </a>
-                    <a href="/session3.html">
-                        <li class="active">기업체 런천 프로그램 ·</li>
-                    </a>
-                    <a href="/session4.html">
-                        <li>사이언스 오픈 이노베이션 포럼</li>
-                    </a>
-                    <a href="/session5.html">
-                        <li>특별강연</li>
-                    </a>
-                    <a href="/session6.html">
-                        <li>스타트업 토크 콘서트</li>
-                    </a>
-                    <a href="/session7.html">
-                        <li>시상식</li>
-                    </a>
-                    <a href="/all-day-event.html">
-                        <li>종일행사</li>
-                    </a>
-                    <a href="/archive.html">
-                        <li>SNU Bio-Day 아카이브</li>
-                    </a>
-                    <a href="/event-video.html">
-                        <li>행사영상</li>
-                    </a>
-                </ul>
-            </nav>
-
-            <button class="register-btn" onclick="window.open(applyURL, '_blank')">참가신청</button>
-            <button class="directions-btn" onclick="location.href='/directions.html'">오시는길</button>
-            <div style="height: 180px;"></div>
-        </aside>
 
         <!-- Main Content -->
         <main class="main-content">

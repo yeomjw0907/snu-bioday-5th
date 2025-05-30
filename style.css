@@ -172,6 +172,12 @@ body {
     text-decoration: underline;
 }
 
+.nav-menu li.active::after{
+    content: " ·";        
+    font-weight: 700;     
+  }
+  
+
 /* 좌측 분홍색 바 */
 .nav-menu li.active::before {
     content: '';
@@ -433,6 +439,8 @@ body {
         background-color: #fff;
         /* 분홍색/마젠타 색상 */
     }
+
+
 
     .sidebar img {
         width: 201px;
