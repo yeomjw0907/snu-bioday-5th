@@ -29,99 +29,9 @@
     <meta name="twitter:title" content="SNU Bio-Day">
     <meta name="twitter:description" content="제5회 SNU Bio-Day / 2025.09.25 개최">
     <meta name="twitter:image" content="./thumbnail.png">
+    <link rel="stylesheet" href="style.css">
     <!-- END TWITTERCARD -->
     <style>
-        /* 100 ‧ Thin */
-        @font-face {
-            font-family: "YoonGothicPro";
-            src: url("./font/YoonGothic700/YoonGothicPro710.woff2") format("truetype");
-            font-weight: 100;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        /* 200 ‧ ExtraLight */
-        @font-face {
-            font-family: "YoonGothicPro";
-            src: url("./font/YoonGothic700/YoonGothicPro720.woff2") format("truetype");
-            font-weight: 200;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        /* 300 ‧ Light */
-        @font-face {
-            font-family: "YoonGothicPro";
-            src: url("./font/YoonGothic700/YoonGothicPro730.woff2") format("truetype");
-            font-weight: 300;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        /* 400 ‧ Regular */
-        @font-face {
-            font-family: "YoonGothicPro";
-            src: url("./font/YoonGothic700/YoonGothicPro740.woff2") format("truetype");
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        /* 500 ‧ Medium */
-        @font-face {
-            font-family: "YoonGothicPro";
-            src: url("./font/YoonGothic700/YoonGothicPro750.woff2") format("truetype");
-            font-weight: 500;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        /* 600 ‧ SemiBold */
-        @font-face {
-            font-family: "YoonGothicPro";
-            src: url("./font/YoonGothic700/YoonGothicPro760.woff2") format("truetype");
-            font-weight: 600;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        /* 700 ‧ Bold */
-        @font-face {
-            font-family: "YoonGothicPro";
-            src: url("./font/YoonGothic700/YoonGothicPro770.woff2") format("truetype");
-            font-weight: 700;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        /* 800 ‧ ExtraBold */
-        @font-face {
-            font-family: "YoonGothicPro";
-            src: url("./font/YoonGothic700/YoonGothicPro780.woff2") format("truetype");
-            font-weight: 800;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        /* 900 ‧ Black */
-        @font-face {
-            font-family: "YoonGothicPro";
-            src: url("./font/YoonGothic700/YoonGothicPro790.woff2") format("truetype");
-            font-weight: 900;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "YoonGothicPro", 'Noto Sans KR', sans-serif;
-            -webkit-font-smoothing: antialiased;
-            letter-spacing: -0.03em;
-
-        }
-
         .floating-animation {
             opacity: 0.0;
             transform: translateY(20px);
@@ -138,114 +48,9 @@
             flex-direction: row;
         }
 
-        body {
-            background-color: #ffffff;
-            color: #000000;
-            line-height: 1.6;
-            overflow-x: hidden;
 
-        }
 
-        .container {
-            display: flex;
-            min-height: 100vh;
-        }
 
-        /* Sidebar */
-        .sidebar {
-            width: 280px;
-            background-color: #fff;
-            padding: 20px;
-            border-right: 1px solid #AEAEB2;
-            position: fixed;
-            height: 100vh;
-            overflow-y: auto;
-            z-index: 100;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 32px;
-        }
-
-        .logo img {
-            width: 180px;
-            height: auto;
-        }
-
-        .nav-menu {
-            list-style: none;
-            margin-bottom: 32px;
-            padding-left: 12px;
-            border-left: 3px solid #BFC0C1;
-
-        }
-
-        .nav-menu li {
-            font-family: "YoonGothicPro", "Pretendard", sans-serif;
-            font-size: 14px;
-            font-weight: 700;
-            padding: 7px 0px;
-            color: #8E8E93;
-            cursor: pointer;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .nav-menu a {
-            text-decoration: none;
-        }
-
-        .nav-menu li:hover {
-            color: #000000;
-        }
-
-        /* 활성 메뉴 아이템 스타일 - 분홍색으로 변경 */
-        .nav-menu li.active {
-            color: #db3d88;
-            /* 분홍색/마젠타 색상 */
-            font-weight: 700;
-            text-decoration: underline;
-        }
-
-        /* 좌측 분홍색 바 */
-        .nav-menu li.active::before {
-            content: '';
-            position: absolute;
-            left: -15px;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background-color: #db3d88;
-            /* 분홍색/마젠타 색상 */
-        }
-
-        .register-btn {
-            width: 100%;
-            padding: 12px;
-            background-color: #0f2351;
-            color: #ffffff;
-            border: none;
-            border-radius: 4px;
-            font-size: 25px;
-            font-weight: 800;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            margin-top: 20px;
-        }
-
-        .register-btn:hover {
-            background-color: #141a32;
-        }
-
-        /* Main Content */
-        .main-content {
-            margin-left: 280px;
-            flex: 1;
-            width: calc(100% - 240px);
-        }
 
         /* Hero Section */
         .hero {
@@ -581,26 +386,9 @@
 
 
 
-        .appbar {
-            display: none;
-        }
 
-        .directions-btn {
-            display: none;
-            /* width: 100%; */
-            padding: 12px;
-            background-color: #0f2351;
-            color: #ffffff;
-            border: none;
-            border-radius: 4px;
-            font-size: 25px;
-            font-weight: 800;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            margin-top: 22px;
-            width: 204px;
-            margin-left: 41px;
-        }
+
+
 
         @media (max-width: 1366px) {
             .hero {
@@ -674,134 +462,6 @@
 
 
         @media (max-width: 768px) {
-
-            .blank-top {
-                height: 111px;
-            }
-
-            .sidebar {
-                display: none;
-            }
-
-            .main-content {
-                flex: 1;
-                width: 100vw !important;
-                margin-left: 0;
-            }
-
-
-
-            .appbar {
-                background-color: rgb(255, 255, 255);
-                display: flex !important;
-                justify-content: space-between;
-                align-items: center;
-                padding-left: 20px;
-                height: 111px;
-                width: 100%;
-
-
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                z-index: 1000;
-            }
-
-            .logo {
-                height: 100px;
-                margin-top: 5px;
-                margin-bottom: 5px;
-            }
-
-            .menu-icon {
-                display: flex;
-                flex-direction: column;
-                gap: 5px;
-                cursor: pointer;
-                padding-right: 20px;
-                padding-top: 40px;
-                padding-bottom: 40px;
-                padding-left: 40px;
-            }
-
-            .menu-icon div {
-                width: 30px;
-                height: 5px;
-                background-color: #0f0f2e;
-                border-radius: 2px;
-            }
-
-            .sidebar {
-                width: 279px;
-                display: block;
-                position: fixed;
-                top: 0;
-                right: -100%;
-                /* width: 80%; */
-                height: 100vh;
-                background-color: white;
-                transition: right 0.3s ease-in-out;
-                z-index: 2001;
-                padding: 0px;
-            }
-
-            .sidebar.active {
-                right: 0;
-            }
-
-            .sidebar-overlay {
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background-color: rgba(0, 0, 0, 0);
-                z-index: 2000;
-                opacity: 0;
-                transition: background-color 0.3s ease, opacity 0.3s ease;
-                pointer-events: none;
-            }
-
-            .sidebar-overlay.active {
-                background-color: rgba(0, 0, 0, 0.5);
-                opacity: 1;
-                pointer-events: auto;
-            }
-
-            .nav-menu {
-                list-style: none;
-                margin-bottom: 32px;
-                padding-left: 54px;
-                border-left: none;
-                margin-top: 89px;
-            }
-
-            .nav-menu li.active::before {
-                content: '';
-                position: absolute;
-                left: -15px;
-                top: 0;
-                bottom: 0;
-                width: 3px;
-                background-color: #fff;
-                /* 분홍색/마젠타 색상 */
-            }
-
-            .sidebar img {
-                width: 201px;
-                margin: 0 auto;
-                padding-top: 25px;
-            }
-
-            .sidebar .register-btn {
-                width: 204px;
-                margin-left: 41px;
-            }
-
-            .directions-btn {
-                display: block;
-            }
 
             .hero {
                 height: 262px;
@@ -1001,7 +661,7 @@
 
                     <div class="event-details">
 
-                        <strong >
+                        <strong>
                             <div class="row floating-animation">
                                 <div style="white-space: nowrap; line-height: 20px;">
                                     <p>목적 :&nbsp;</p>
@@ -1015,7 +675,7 @@
                         <p class="floating-animation">일시 : 2025.09.25. (수)</p>
                         <p class="floating-animation">장소 : 서울대학교 교수회관 컨벤션홀 (65동)</p>
                         <p class="floating-animation">
-                        <div class="row floating-animation" >
+                        <div class="row floating-animation">
                             <div style="white-space: nowrap; line-height: 20px;">주최 :&nbsp;</div>
                             <div style="line-height: 20px;">서울대학교 산학협력단, 창업지원단, 램프(LAMP)사업단</div>
                         </div>
@@ -1207,69 +867,33 @@
     </div>
 
 
+    <script src="./sidebar.js"></script>
     <script>
         // 간단한 인터랙션 추가
-        document.addEventListener('DOMContentLoaded', function () {
-            // 네비게이션 메뉴 클릭 이벤트
-            const navItems = document.querySelectorAll('.nav-menu li');
-            navItems.forEach(item => {
-                item.addEventListener('click', function () {
-                    // 모든 메뉴에서 active 클래스 제거
-                    navItems.forEach(nav => nav.classList.remove('active'));
-                    // 클릭한 메뉴에 active 클래스 추가
-                    this.classList.add('active');
-                });
 
-                // 호버 효과
-                // item.addEventListener('mouseenter', function() {
-                //     if (!this.classList.contains('active')) {
-                //         this.style.color = '#000000';
-                //     }
-                // });
-                // item.addEventListener('mouseleave', function() {
-                //     if (!this.classList.contains('active')) {
-                //         this.style.color = '#8e8e93';
-                //     }
-                // });
-            });
 
-            document.getElementById("applyLink").href = applyURL;
-        });
+
 
         window.addEventListener("load", () => {
-    function animate() {
-        const scrollY = window.scrollY;
-        const elements = document.querySelectorAll('.floating-animation');
-        elements.forEach(el => {
-            if (scrollY + window.innerHeight * 0.7 > el.getBoundingClientRect().top + window.scrollY) {
-                el.classList.add('show');
-            } else {
-                // el.classList.remove('show');
-            }
-        });
-    }
-
-    animate();
-
-    window.addEventListener("scroll", animate);
-});
-
-
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const menuToggle = document.getElementById('menu-icon');
-            const mobileSidebar = document.querySelector('.sidebar');
-            const sidebarOverlay = document.getElementById('sidebarOverlay');
-
-            function toggleMenu() {
-                mobileSidebar.classList.toggle('active');
-                sidebarOverlay.classList.toggle('active');
+            document.getElementById("applyLink").href = applyURL;
+            function animate() {
+                const scrollY = window.scrollY;
+                const elements = document.querySelectorAll('.floating-animation');
+                elements.forEach(el => {
+                    if (scrollY + window.innerHeight * 0.7 > el.getBoundingClientRect().top + window.scrollY) {
+                        el.classList.add('show');
+                    } else {
+                        // el.classList.remove('show');
+                    }
+                });
             }
 
-            menuToggle.addEventListener('click', toggleMenu);
-            sidebarOverlay.addEventListener('click', toggleMenu);
+            animate();
+
+            window.addEventListener("scroll", animate);
         });
+
+
     </script>
 </body>
 
