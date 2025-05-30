@@ -1,10 +1,838 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta http-equiv="refresh" content="0; URL='./main.html'" />
-    <title>Redirecting...</title>
-  </head>
-  <body>
-    <p>메인 페이지로 이동 중입니다. <a href="./main.html">이동하기</a></p>
-  </body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNU Bio-Day</title>
+    <meta name="description" content="제5회 SNU Bio-Day / 2025.09.25 개최">
+    <meta name="robots" content="ALL">
+    <meta name="keywords" content="SNU Bio,Day">
+    <meta name="author" content="SNU Bio-Day">
+    <link rel="icon" href="https://snubioday.snu.ac.kr/favicon.ico?ver=2021-03-30" type="image/x-icon">
+    <link rel="shortcut icon" href="https://snubioday.snu.ac.kr/favicon.ico?ver=2021-03-30" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" href="https://snubioday.snu.ac.kr/mobileicon.png?ver=2021-03-30">
+    <!-- CANONICAL LINK -->
+    <link rel="canonical" href="http://snubioday.snu.ac.kr">
+    <!-- BEGIN OPENGRAPH -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" id="ogurl" content="https://snubioday.snu.ac.kr/">
+    <meta property="og:site_name" content="SNU Bio-Day">
+    <meta property="og:title" id="ogtitle" content="SNU Bio-Day">
+    <meta property="og:description" content="제5회 SNU Bio-Day / 2025.09.25 개최">
+    <meta property="og:image" content="./thumbnail.png">
+    <meta property="og:image:width" content="600">
+    <meta property="og:image:height" content="400">
+    <!-- END OPENGRAPH -->
+    <!-- BEGIN TWITTERCARD -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="SNU Bio-Day">
+    <meta name="twitter:description" content="제5회 SNU Bio-Day / 2025.09.25 개최">
+    <meta name="twitter:image" content="./thumbnail.png">
+    <link rel="stylesheet" href="style.css">
+    <!-- END TWITTERCARD -->
+    <style>
+        .floating-animation {
+            opacity: 0.0;
+            transform: translateY(20px);
+            transition: all 0.5s ease-in-out;
+        }
+
+        .show {
+            opacity: 1.0;
+            transform: translateY(0px);
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+        }
+
+
+
+
+
+        /* Hero Section */
+        .hero {
+            height: 803px;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./img/UI/img1.webp');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            /* align-items: center; */
+            /* text-align: center; */
+            color: #ffffff;
+            position: relative;
+        }
+
+        .hero-content {
+            z-index: 2;
+            max-width: 800px;
+            padding: 0;
+            margin-left: 87px;
+
+        }
+
+        .hero h1 {
+            font-size: 80px;
+            font-weight: 700;
+            margin-bottom: 2px;
+            letter-spacing: 2px;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+        }
+
+        .hero .subtitle {
+            font-size: 28px;
+            margin-bottom: 276px;
+            font-weight: 200;
+        }
+
+        .hero .description {
+            font-size: 13px;
+            max-width: 500px;
+            line-height: 1.5;
+            /* margin: 0 auto; */
+            margin-bottom: 56px;
+            color: #fff;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            word-break: keep-all;
+        }
+
+
+        /* Event Info Section */
+        .event-info {
+            padding: 60px 20px;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .event-info-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .event-info h2 {
+            font-size: 45px;
+            font-weight: 300;
+            margin-bottom: 32px;
+
+        }
+
+        .event-info h2 span {
+            font-size: 45px;
+            font-weight: 700;
+            margin-bottom: 32px;
+            color: #293C70;
+        }
+
+        .event-details {
+            font-size: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+            color: #000;
+            font-weight: 400;
+        }
+
+        .event-details p {
+            margin-bottom: 8px;
+        }
+
+        .event-details strong {
+            color: #000000;
+            font-weight: 600;
+        }
+
+        .highlight {
+            color: #db3d88;
+            font-weight: 700;
+        }
+
+        /* Feature Cards */
+        .feature-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .feature-card {
+            height: 297px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            text-decoration: none;
+        }
+
+        .feature-card h3 {
+            font-size: 25px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .feature-card.registration {
+            background: url('./img/UI/registration.webp');
+            background-size: cover;
+            color: #000000;
+        }
+
+        .feature-card.poster {
+            background: linear-gradient(rgba(15, 35, 81, 0.7), rgba(15, 35, 81, 0.7)), url('./img/UI/posterApply.webp');
+            background-size: cover;
+            color: #ffffff;
+        }
+
+        .feature-card.directions {
+            background: linear-gradient(rgba(15, 35, 81, 0.7), rgba(15, 35, 81, 0.7)), url('./img/UI/school.webp');
+            background-size: cover;
+            color: #fff;
+        }
+
+        .apply-button {
+            display: inline-flex;
+            align-items: center;
+            /* gap: 8px; */
+            background-color: white;
+            /* color: black; */
+            font-weight: bold;
+            border-radius: 999px;
+            padding: 6px 23px;
+            /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+            font-size: 12px;
+            font-weight: 600;
+            /* cursor: pointer; */
+            transition: all 0.2s ease;
+            border: none;
+            color: #000;
+        }
+
+        .apply-button .arrow-icon {
+            height: 14px;
+            margin-left: 2px;
+        }
+
+        /* .feature-btn {
+            padding: 8px 16px;
+            border: 1px solid;
+            background: transparent;
+            border-radius: 4px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+        } */
+
+        .registration .feature-btn {
+            border-color: #8e8e93;
+            color: #8e8e93;
+        }
+
+        .poster .feature-btn {
+            border-color: #ffffff;
+            color: #ffffff;
+        }
+
+        .directions .feature-btn {
+            border-color: #fff;
+            color: #fff;
+        }
+
+        /* Program Section */
+        .program {
+            padding: 60px 20px;
+            background-color: #fff;
+        }
+
+        .program-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .program h2 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 40px;
+        }
+
+        .program-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .program-section .speaker {
+            background-color: #F8F9FA;
+            border-radius: 10px;
+        }
+
+        .program-section h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #000000;
+
+
+        }
+
+        .speaker {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+            margin-bottom: 24px;
+            padding-left: 16px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-right: 16px;
+        }
+
+        .speaker-photo {
+            width: 132px;
+            height: 160px;
+            background-color: #d6d6d6;
+            border-radius: 4px;
+            border-color: #D6D6D6;
+            flex-shrink: 0;
+            overflow: hidden;
+
+        }
+
+
+        .speaker-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .speaker-info h4 {
+            font-weight: 800;
+            font-size: 20px;
+            color: #000000;
+            margin-bottom: 6px;
+
+        }
+
+        .speaker-info h5 {
+            margin-top: 14px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .speaker-info p {
+            font-size: 12px;
+            font-weight: 500;
+            color: #000;
+            margin-bottom: 2px;
+            line-height: 14px;
+        }
+
+        .speaker-info .description {
+            font-size: 10px;
+            /* color: #8e8e93; */
+            margin-top: 8px;
+            line-height: 1.4;
+            font-weight: 500;
+
+        }
+
+        /* Partners Section */
+        .partners {
+            padding: 60px 20px;
+            background-color: #ffffff;
+            margin-bottom: 340px;
+        }
+
+        .partner-main {
+            width: 290px;
+            margin: 0 auto;
+            margin-bottom: 30px;
+        }
+
+        .partners-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .partners h2 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 40px;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 30px 20px;
+            align-items: center;
+            gap: 21px;
+        }
+
+        .partner-logo {
+            text-align: center;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .partner-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+
+
+
+
+
+
+        @media (max-width: 1366px) {
+            .hero {
+                height: 519px;
+            }
+
+            .hero-content h1 {
+                font-size: 60px;
+                margin-bottom: 0px;
+            }
+
+            .hero-content .subtitle {
+                margin-bottom: 147px;
+            }
+
+            .hero-content .description {
+                margin-bottom: 25px;
+            }
+
+            .event-info-container h2 {
+                font-size: 38px;
+                line-height: 54px;
+            }
+
+            .event-info-container h2 span {
+                font-size: 38px;
+            }
+
+            .feature-card {
+                height: 190px;
+            }
+
+            .feature-card h3 {
+                font-size: 19px;
+                margin-bottom: 11px;
+            }
+
+            .speaker-photo {
+                width: 99px;
+                height: 120px;
+            }
+
+            .speaker-info h4 {
+                font-size: 15px;
+                margin-bottom: 4px;
+            }
+
+            .speaker-info p {
+                font-size: 9px;
+                line-height: 11px;
+            }
+
+            .partner-main {
+                width: 178px;
+            }
+
+            .partner-main img {
+                width: 178px;
+            }
+
+            .partner-logo {
+                width: 100px;
+                height: auto;
+            }
+
+            .partners-grid {
+                gap: 13px 13px;
+            }
+
+        }
+
+
+        @media (max-width: 768px) {
+
+            .hero {
+                height: 262px;
+            }
+
+            .hero-content {
+                height: 262px;
+                margin-left: 20px;
+                padding-top: 41px;
+            }
+
+            .hero-content h1 {
+                font-size: 45px;
+                height: 65px;
+            }
+
+            .hero-content .subtitle {
+                font-size: 15px;
+                margin-bottom: 71px;
+
+            }
+
+            .hero-content .description {
+                font-size: 12px;
+                color: white;
+                line-height: 15px;
+                padding-right: 40px;
+
+
+            }
+
+            .event-info-container h2 {
+                font-size: 25px;
+                /* width: 300px; */
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                word-break: keep-all;
+                line-height: 33px;
+
+            }
+
+            .event-info-container h2 span {
+                font-size: 25px;
+                line-height: 33px;
+            }
+
+            .event-details {
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                word-break: keep-all;
+                font-size: 13px;
+            }
+
+            .feature-cards {
+                display: flex;
+                flex-direction: column;
+                margin: 0px 20px;
+            }
+
+            .feature-card {
+                height: 120px;
+                background-size: contain;
+            }
+
+            .feature-card.registration {
+                background-position: center
+            }
+
+            .feature-card h3 {
+                font-size: 19px;
+                margin-bottom: 11px;
+            }
+
+            .program-grid {
+                display: flex;
+                flex-direction: column;
+            }
+
+
+
+            .partner-main {
+                margin-left: 0;
+                margin-bottom: 8px;
+            }
+
+            .partner-main img {
+                width: 232px;
+            }
+
+            .partners-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 14px 14px;
+            }
+
+        }
+    </style>
+    <script src="./env.js"></script>
+</head>
+
+
+
+
+<body>
+
+    <div class="container">
+        <!-- Sidebar -->
+        
+        <header data-include="/partials/appbar.html"></header>
+        
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="blank-top"></div>
+
+
+            <!-- Hero Section -->
+            <section class="hero floating-animation" id="hero">
+                <div class="hero-content">
+                    <h1><span style="font-weight: 900;">SNU</span>BIODAY</h1>
+                    <p class="subtitle">Global Bio-Innovation, Starts Here</p>
+                    <div class="description">
+                        <p>*등록 마감 이후 신청하신 분들께는 교수회관 점심식사 대신 샌드위치 세트가 제공됩니다.<br>
+                            *또한 일부 프로그램 참여가 제한될 수 있으니, 양해 부탁드립니다.</p>
+
+                    </div>
+                </div>
+            </section>
+
+
+
+            <!-- Event Information -->
+            <section class="event-info">
+                <div class="event-info-container">
+                    <h2 class="floating-animation">서울대학교 바이오융합 분야의<br><span>연구 네트워크 강화 및 기술사업화 활성화</span></h2>
+
+                    <div class="event-details">
+
+                        <strong>
+                            <div class="row floating-animation">
+                                <div style="white-space: nowrap; line-height: 20px;">
+                                    <p>목적 :&nbsp;</p>
+                                </div>
+                                <div style="line-height: 20px;">
+                                    <p>서울대학교 바이오융합 분야의 학내외 연구 네트워크 강화<br>
+                                        서울대학교 바이오 중개협업 및 바이오 신업체 참여를 통한 기술사업화 활성화</p>
+                                </div>
+                            </div>
+                        </strong>
+                        <p class="floating-animation">일시 : 2025.09.25. (수)</p>
+                        <p class="floating-animation">장소 : 서울대학교 교수회관 컨벤션홀 (65동)</p>
+                        <p class="floating-animation">
+                        <div class="row floating-animation">
+                            <div style="white-space: nowrap; line-height: 20px;">주최 :&nbsp;</div>
+                            <div style="line-height: 20px;">서울대학교 산학협력단, 창업지원단, 램프(LAMP)사업단</div>
+                        </div>
+                        </p>
+                        <p class="floating-animation">주관 : 서울대학교 생명공학공동연구원</p>
+
+                        <div class="row floating-animation">
+                            <div style="white-space: nowrap;">
+                                <p>문의 :&nbsp;</p>
+                            </div>
+                            <div>
+                                <p>Tel. 02-880-2855 / Email. sunbio2024@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <p class="highlight floating-animation">※ 사전등록 필수 (9월 6일 마감) / 현장등록 불가</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Feature Cards -->
+            <section class="feature-cards">
+                <a class="feature-card registration floating-animation" id="applyLink" target="_blank">
+                    <h3>참가신청</h3>
+                    <button class="apply-button">바로가기 <img src="./svg/UI/arrow.svg" alt="바로가기 아이콘"
+                            class="arrow-icon" /></button>
+                </a>
+
+                <a class="feature-card poster floating-animation" href="/all-day-event.html">
+                    <h3>포스터 공모</h3>
+                    <button class="apply-button">바로가기 <img src="./svg/UI/arrow.svg" alt="바로가기 아이콘"
+                            class="arrow-icon" /></button>
+                </a>
+
+                <a class="feature-card directions floating-animation" href="/directions.html">
+                    <h3>오시는 길</h3>
+                    <button class="apply-button">서울대학교 교수회관 <img src="./svg/UI/arrow.svg" alt="바로가기 아이콘"
+                            class="arrow-icon" /></button>
+                </a>
+            </section>
+
+
+
+            <!-- Program Section -->
+            <section class="program">
+                <div class="program-container">
+                    <h2 class="floating-animation">Program</h2>
+
+                    <div class="program-grid">
+                        <!-- 축사 -->
+                        <div class="program-section floating-animation">
+                            <h3>축사</h3>
+                            <div class="speaker">
+                                <div class="speaker-photo">
+                                    <img src="./img/UI/speaker1.webp" alt="유홍림 총장">
+                                </div>
+                                <div class="speaker-info">
+                                    <h4>유홍림 총장</h4>
+                                    <p>서울대학교 총장</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 격려사 및 시상 -->
+                        <div class="program-section floating-animation">
+                            <h3>격려사 및 시상</h3>
+                            <div class="speaker">
+                                <div class="speaker-photo">
+                                    <img src="./img/UI/speaker2.webp" alt="김재현 연구부총장">
+                                </div>
+                                <div class="speaker-info">
+                                    <h4>김재영 연구부총장</h4>
+                                    <p>서울대학교 연구부총장<br>
+                                        산학협력단장</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 기조강연 -->
+                        <div class="program-section floating-animation">
+                            <h3>기조강연</h3>
+                            <div class="speaker">
+                                <div class="speaker-photo">
+                                    <img src="./img/UI/speaker3.webp" alt="권성준 교수">
+                                </div>
+                                <div class="speaker-info">
+                                    <h4>권성준 교수</h4>
+                                    <p class="job">서울대학교 공과대학 전기정보공학부 교수</p>
+                                    <h5>발표주제</h5>
+                                    <p class="description">
+                                        From Lab bench to the world: "Smart Photonics" for life saving diagnostics and
+                                        biomarker discovery
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 특별강연 -->
+                        <div class="program-section floating-animation">
+                            <h3>특별강연</h3>
+                            <div class="speaker">
+                                <div class="speaker-photo">
+                                    <img src="./img/UI/speaker4.webp" alt="김명기 대표">
+                                </div>
+                                <div class="speaker-info">
+                                    <h4>김명기 대표</h4>
+                                    <p>LSK 인베스트먼트</p>
+                                    <h5>발표주제</h5>
+                                    <p class="description">
+                                        바이오벤처 투자 활성화
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Partner Companies -->
+            <section class="partners">
+                <div class="partners-container">
+                    <h2 class="floating-animation">Partner company</h2>
+                    <div class="partner-main floating-animation">
+                        <img src="./img/UI/partner1.webp" alt="SK 바이오팜">
+                    </div>
+                    <div class="partners-grid">
+
+                        <div class="partner-logo floating-animation">
+                            <img src="./img/UI/partner2.webp" alt="MERCK">
+                        </div>
+                        <div class="partner-logo floating-animation">
+                            <img src="./img/UI/partner3.webp" alt="revvity">
+                        </div>
+                        <div class="partner-logo floating-animation">
+                            <img src="./img/UI/partner4.webp" alt="GW Think">
+                        </div>
+                        <div class="partner-logo floating-animation">
+                            <img src="./img/UI/partner5.webp" alt="aladdin">
+                        </div>
+                        <div class="partner-logo floating-animation">
+                            <img src="./img/UI/partner6.webp" alt="QIAGEN">
+                        </div>
+
+                        <div class="partner-logo floating-animation">
+                            <img src="./img/UI/partner7.webp" alt="SCOP">
+                        </div>
+                        <div class="partner-logo floating-animation">
+                            <img src="./img/UI/partner8.webp" alt="Leica">
+                        </div>
+                        <div class="partner-logo floating-animation">
+                            <img src="./img/UI/partner9.webp" alt="신테카바이오">
+                        </div>
+                        <div class="partner-logo floating-animation">
+                            <img src="./img/UI/partner10.webp" alt="농림부">
+                        </div>
+                        <div class="partner-logo floating-animation">
+                            <img src="./img/UI/partner11.webp" alt="나노바이오텍">
+                        </div>
+                        <div class="partner-logo floating-animation">
+                            <img src="./img/UI/partner12.webp" alt="바이오디자인">
+                        </div>
+
+                        <div class="partner-logo floating-animation">
+                            <img src="./img/UI/partner13.webp" alt="T-RICH">
+                        </div>
+                        <div class="partner-logo floating-animation">
+                            <img src="./img/UI/partner14.webp" alt="soltue">
+                        </div>
+                        <div class="partner-logo floating-animation">
+                            <img src="./img/UI/partner15.webp" alt="한국산업기술진흥원">
+                        </div>
+                        <div class="partner-logo floating-animation">
+                            <img src="./img/UI/partner16.webp" alt="한약진">
+                        </div>
+                        <div class="partner-logo floating-animation">
+                            <img src="./img/UI/partner17.webp" alt="메디톡스">
+                        </div>
+                        <div class="partner-logo floating-animation">
+                            <img src="./img/UI/partner18.webp" alt="QIAGEN">
+                        </div>
+                        <div class="partner-logo floating-animation">
+                            <img src="./img/UI/partner19.webp" alt="QIAGEN">
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+
+    <script src="./sidebar.js"></script>
+    <script>
+        // 간단한 인터랙션 추가
+
+
+
+
+        window.addEventListener("load", () => {
+            document.getElementById("applyLink").href = applyURL;
+            function animate() {
+                const scrollY = window.scrollY;
+                const elements = document.querySelectorAll('.floating-animation');
+                elements.forEach(el => {
+                    if (scrollY + window.innerHeight * 0.7 > el.getBoundingClientRect().top + window.scrollY) {
+                        el.classList.add('show');
+                    } else {
+                        // el.classList.remove('show');
+                    }
+                });
+            }
+
+            animate();
+
+            window.addEventListener("scroll", animate);
+        });
+
+
+    </script>
+</body>
+
 </html>
