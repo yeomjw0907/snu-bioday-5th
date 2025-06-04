@@ -79,6 +79,12 @@
             height: 206px;
         }
 
+        .table-container{
+            justify-items: center;
+            width: 100%;
+            /* background-color: #14A2B8; */
+        }
+
         .program-introduction .professors thead th {
             background-color: #f2f2f2;
         }
@@ -108,7 +114,10 @@
             border-collapse: collapse;
             border: 1px solid #ccc;
             margin-bottom: 100px;
+            /*표 크기 조절*/
             margin-top: 78px;
+            max-width: 900px;
+            
         }
 
         .program-introduction .professors th {
@@ -232,145 +241,150 @@
                     </tr>
                 </table>
 
-                <table class="professors">
-                    <thead>
-                        <th>서울대학교 생명공학공동연구원 (Bio-MAX)</th>
-                        <th>서울특별시 보라매병원 (BMC)</th>
-                    </thead>
-                    <tbody>
+                <div class="table-container">
+
+                    <table class="professors">
+                        <thead>
+                            <th>서울대학교 생명공학공동연구원 (Bio-MAX)</th>
+                            <th>서울특별시 보라매병원 (BMC)</th>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <th colspan="2"> <!-- 행사명1 삽입 --></th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="./img/UI/권성원교수.png">
+                                    <p>권성원 교수<br>
+                                        (약학대학)
+                                    </p>
+                                </td>
+                                <td>
+                                    <img src="./img/UI/김영아교수.png">
+                                    <p>
+                                        김영아 교수<br>
+                                        (의과대학)
+                                    </p>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th colspan="2"> <!-- 행사명1 삽입 --></th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="./img/UI/도재영교수.png">
+                                    <p>도재영 교수<br>
+                                        (공과대학)
+                                    </p>
+                                </td>
+                                <td>
+                                    <img src="./img/UI/이요한교수.png">
+                                    <p>
+                                        이요한 교수<br>
+                                        (의과대학)
+                                    </p>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th colspan="2"> <!-- 행사명1 삽입 --></th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="./img/UI/장구교수.png">
+                                    <p>장구 교수<br>
+                                        (수의과대학)
+                                    </p>
+                                </td>
+                                <td>
+                                    <img src="./img/UI/황규리 교수.png">
+                                    <p>
+                                        황규리 교수<br>
+                                        (의과대학)
+                                    </p>
+                                </td>
+                            </tr>
+
+                        </tbody>
 
                         <tr>
-                            <th colspan="2"> <!-- 행사명1 삽입 --></th>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img src="./img/UI/권성원교수.png">
-                                <p>권성원 교수<br>
-                                    (약학대학)
-                                </p>
-                            </td>
-                            <td>
-                                <img src="./img/UI/김영아교수.png">
-                                <p>
-                                    김영아 교수<br>
-                                    (의과대학)
-                                </p>
-                            </td>
+                            <td colspan="2" style="height: 60px; background-color: transparent; border: none;"></td>
                         </tr>
 
-                        <tr>
-                            <th colspan="2"> <!-- 행사명1 삽입 --></th>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img src="./img/UI/도재영교수.png">
-                                <p>도재영 교수<br>
-                                    (공과대학)
-                                </p>
-                            </td>
-                            <td>
-                                <img src="./img/UI/이요한교수.png">
-                                <p>
-                                    이요한 교수<br>
-                                    (의과대학)
-                                </p>
-                            </td>
-                        </tr>
 
-                        <tr>
-                            <th colspan="2"> <!-- 행사명1 삽입 --></th>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img src="./img/UI/장구교수.png">
-                                <p>장구 교수<br>
-                                    (수의과대학)
-                                </p>
-                            </td>
-                            <td>
-                                <img src="./img/UI/황규리 교수.png">
-                                <p>
-                                    황규리 교수<br>
-                                    (의과대학)
-                                </p>
-                            </td>
-                        </tr>
+                        <thead>
+                            <th>서울대학교 생명공학공동연구원 (Bio-MAX)</th>
+                            <th>분당서울대학교병원 (SNUBH)</th>
+                        </thead>
+                        <tbody>
 
-                    </tbody>
+                            <tr>
+                                <th colspan="2"> <!-- 행사명1 삽입 --></th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="./img/UI/김정욱교수.png">
+                                    <p>김정욱 교수<br>
+                                        (공과대학)
+                                    </p>
+                                </td>
+                                <td>
+                                    <img src="./img/UI/성기혁교수.png">
+                                    <p>
+                                        성기혁 교수<br>
+                                        (의과대학)
+                                    </p>
+                                </td>
+                            </tr>
 
-                    <tr>
-                        <td colspan="2" style="height: 60px; background-color: transparent; border: none;"></td>
-                    </tr>
+                            <tr>
+                                <th colspan="2"> 정밀 맞춤형 손가락 보조기 제작을 위한 3D 프린팅 플랫폼 개발</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="./img/UI/이호원교수.png">
+                                    <p>이호원 교수<br>
+                                        (공과대학)
+                                    </p>
+                                </td>
+                                <td>
+                                    <img src="./img/UI/하유정교수.png">
+                                    <p>
+                                        하유정 교수<br>
+                                        (의과대학)
+                                    </p>
+                                </td>
+                            </tr>
 
+                            <tr>
+                                <th colspan="2">단일 B세포 기반 신속 항체 발굴 플랫폼을 활용한 아데노바이러스 치료 및 예방용 인간 항체 개발<br>
+                                    Development of Therapeutic and Prophylactic Human Antibodies against Adenovirus
+                                    Using a
+                                    Rapid Single B Cell–Based Discovery Platform
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="./img/UI/정상택교수.png">
+                                    <p>정상택 교수<br>
+                                        (공과대학)
+                                    </p>
+                                </td>
+                                <td>
+                                    <img src="./img/UI/최승진교수.png">
+                                    <p>
+                                        최승진 교수<br>
+                                        (의과대학)
+                                    </p>
+                                </td>
+                            </tr>
 
-                    <thead>
-                        <th>서울대학교 생명공학공동연구원 (Bio-MAX)</th>
-                        <th>분당서울대학교병원 (SNUBH)</th>
-                    </thead>
-                    <tbody>
+                        </tbody>
+                    </table>
 
-                        <tr>
-                            <th colspan="2"> <!-- 행사명1 삽입 --></th>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img src="./img/UI/김정욱교수.png">
-                                <p>김정욱 교수<br>
-                                    (공과대학)
-                                </p>
-                            </td>
-                            <td>
-                                <img src="./img/UI/성기혁교수.png">
-                                <p>
-                                    성기혁 교수<br>
-                                    (의과대학)
-                                </p>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <th colspan="2"> 정밀 맞춤형 손가락 보조기 제작을 위한 3D 프린팅 플랫폼 개발</th>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img src="./img/UI/이호원교수.png">
-                                <p>이호원 교수<br>
-                                    (공과대학)
-                                </p>
-                            </td>
-                            <td>
-                                <img src="./img/UI/하유정교수.png">
-                                <p>
-                                    하유정 교수<br>
-                                    (의과대학)
-                                </p>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <th colspan="2">단일 B세포 기반 신속 항체 발굴 플랫폼을 활용한 아데노바이러스 치료 및 예방용 인간 항체 개발<br>
-                                Development of Therapeutic and Prophylactic Human Antibodies against Adenovirus Using a
-                                Rapid Single B Cell–Based Discovery Platform
-                            </th>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img src="./img/UI/정상택교수.png">
-                                <p>정상택 교수<br>
-                                    (공과대학)
-                                </p>
-                            </td>
-                            <td>
-                                <img src="./img/UI/최승진교수.png">
-                                <p>
-                                    최승진 교수<br>
-                                    (의과대학)
-                                </p>
-                            </td>
-                        </tr>
-
-                    </tbody>
-                </table>
+                </div>
             </section>
 
 
